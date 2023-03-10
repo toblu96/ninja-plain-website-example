@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <include src="nav.html">Loading...</include>
+    hello from extern
+    <a href="/index.html">Back to main page</a>
+
+    <script>
+        (() => {
+            const includes = document.getElementsByTagName('include');
+            [].forEach.call(includes, i => {
+                let filePath = i.getAttribute('src');
+                fetch(filePath).then(file => {
+                    file.text().then(content => {
+                        i.insertAdjacentHTML('afterend', content);
+                        i.remove();
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>

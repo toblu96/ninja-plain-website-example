@@ -10,24 +10,31 @@
 
 <body>
     <nav class="nav-element">
-        <button onclick="window.location = '/index.html'">Home</button>
-        <a href="/index.html">index</a>
+        <button onclick="window.location = '/index.html'">Home (Button element)</button>
+        <a href="/index.html">Home</a>
         <a href="/extern.html">extern</a>
+        <p>This navigation can be reused on multiple pages</p>
     </nav>
 </body>
 
 </html>
 <style>
+    body {
+        margin: 0px;
+        padding: 1rem;
+    }
+
     nav>a {
         margin-right: 1rem;
         padding: 0.5rem;
-        background-color: lightgray;
+        background-color: darkgray;
         border-radius: 10% / 50%;
     }
 
     nav {
-        padding-bottom: 1rem;
-        margin-top: 1rem
+        padding: 1rem;
+        /* margin-top: 1rem; */
+        background-color: lightgray;
     }
 
     .nav-element>* {

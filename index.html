@@ -13,7 +13,7 @@
 
 <body>
     <include src="nav.html">Loading...</include>
-    <h1>hello form home</h1>
+    <h1>hello from home</h1>
 
     <div id="myform">
         <b>Simple form with name and age ...</b>
@@ -53,8 +53,9 @@
     </div>
 
     <br>
-    <button onclick="window.location = '/extern.html'">Navigate to external page</button>
+    <button onclick="window.location = '/extern.html'" style="margin-bottom: 1rem;">Navigate to external page</button>
 
+    <!-- Because its also a nav element with a tags inside, css classes from the nav html gets applied here -->
     <nav>
         <a href="#" data-animal-type="bird">test</a>
         <a href="#">test</a>
@@ -78,6 +79,7 @@
 </body>
 
 
+<!-- Gets globally applied to currently loaded components -->
 <style>
     button {
         border-radius: 0.5rem;
